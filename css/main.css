@@ -1,0 +1,75 @@
+:root{
+
+/* colours */
+
+    /* general colours */
+    --pure-black: #000000;
+    --pure-white: #ffffff;
+    --pale-green: #C0F4D2;
+    --darker-green: #67B281;
+    --pale-blue-layout: #D4EBFF;
+    --darker-blue: #4378FF;
+
+    /* layout specific colours */
+    --input-field-grey: #F5F5F5;
+
+    /* text specific colours */
+    --black-text: #2D302E;
+    --medium-grey-text: #888;
+    --pale-blue-text: #C8D9F9;
+    --pale-green-text: #C2E9D1;
+    --input-field-grey-text: #D0D0D0;
+
+    /* user-control specific colours */
+    --complete-task: #99B8F9;
+    --edit-task: #888D89;
+    --delete-task: #F6A9A2;
+
+/* layout */
+
+    /* used for the hero page boxes  */
+    --box-shadow: 4px 4px 15px 0px rgba(224,224,224,1);
+
+}
+
+/* general */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    color: var(--black-text);
+    scroll-behavior: smooth;
+}
+
+section {
+    background-image: url(../images/honeydew-gradient.png);
+    background-size: cover;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+/* fonts */
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.live-date {
+    color: var(--darker-blue);
+}
+
+#all-tasks .tasks-number {
+    color: var(--medium-grey-text);
+}
+
+#outstanding-tasks .tasks-number {
+    color: var(--darker-green);
+}
+
+#completed-tasks .tasks-number {
+    color: var(--darker-blue);
+}

@@ -40,8 +40,6 @@ function equal(actual, expected, message) {
     testFunction();
     console.groupEnd(name);
   }
-  
- 
 
   test('A new item add in the local storage correctly, and disply correctly ', ()=> {
      //get input 
