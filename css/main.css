@@ -1,0 +1,139 @@
+/* 
+This CSS file contains styles for the whole site.
+For section specific styles there are seperate CSS files dedicated to each section.
+I've included reusable variables that we can use in the HTML code.
+*/
+
+:root{
+
+/* colours */
+
+    /* general colours */
+    --pure-black: #000000;
+    --pure-white: #ffffff;
+    --pale-green: #C0F4D2;
+    --darker-green: #67B281;
+    --pale-blue-layout: #D4EBFF;
+    --darker-blue: #4378FF;
+
+    /* layout specific colours */
+    --input-field-grey: #F5F5F5;
+
+    /* text specific colours */
+    --black-text: #2D302E;
+    --medium-grey-text: #888;
+    --pale-blue-text: #C8D9F9;
+    --pale-green-text: #C2E9D1;
+    --input-field-grey-text: #D0D0D0;
+
+    /* user-control specific colours */
+    --complete-task: #99B8F9;
+    --edit-task: #888D89;
+    --delete-task: #F6A9A2;
+
+/* layout */
+
+    /* used for the hero page boxes  */
+    --box-shadow: 4px 4px 15px 0px rgba(224,224,224,1);
+
+    --xs-spacing: 0.5rem;
+    --s-spacing: 1rem;
+    --m-spacing: 2rem;
+    --ml-spacing: 3rem;
+    --l-spacing: 8rem;
+
+    --create-add-cancel-button-size: 50px; 
+}
+
+
+
+/* general */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: var(--black-text);
+    scroll-behavior: smooth;
+}
+
+main {
+    background-image: url(../images/honeydew-gradient.png);
+}
+
+body {
+    margin: 0;
+}
+
+section {
+    background-size: cover;
+    min-height: 100vh;
+    overflow: auto;
+    padding: var(--ml-spacing);
+}
+
+ 
+button {
+    /* specificly styles the blue buttons on the create/edit task pages */
+    border: none;
+    background-color: transparent;
+}
+
+/* reusable styling */
+
+.center { 
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid {
+    display: grid;
+}
+
+.large-button {
+    /* for all blue bottons styling */
+    width: 50px;
+}
+
+.medium-icon {
+    /* this is currently for all the icons except the home icon, we might 
+    need a smaller icon for the user-controls (edit/delete/complete) */
+    width: 20px;
+}
+
+.large-icon {
+    /* this is currently just the home icon */
+    width: 40px;
+}
+
+/* multi-section font styling */
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1rem;
+}
+.live-date {
+    color: var(--darker-blue);
+}
+
+p {
+    font-size: 1em;
+}
+
+.small-text,
+::placeholder {
+    font-size: 0.75em;
+}
+
+  
