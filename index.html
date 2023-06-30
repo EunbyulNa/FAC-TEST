@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TO-DO-LIST</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>To Do - Testing </title>
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/hero-page.css">
+    <link rel="stylesheet" href="css/tasks-page.css">
+    <link rel="stylesheet" href="css/create-edit-task.css">
+
 </head>
 <body>
     <main>
 
-        <!-- eun's orginal code -->
+        <!-- Eun's orginal code -->
         <!-- <input class='listAdd'type="text"></input>
             <button>Submit</button>
             <div class="listBox">
@@ -19,13 +26,13 @@
             </div> -->
 
         <header>   
-            <nav class="nav-bar"><img src="images/icons/home.png" alt="Home icon"></nav>
+            <nav class="nav-bar" ><img src="images/icons/home.png" class="large-icon" alt="Home icon"></nav>
         </header>
 
         <!-- sections will hide/show with JS -->
         <section id="hero-page">
             <h1>Hello</h1>
-            <h2 class="live-date">Friday 30th June</h2>
+            <h3 class="live-date">Friday 30th June</h3>
             
             <div class="list-type-container">
                 <!-- href will redirect to tasks page with a filter to show ALL tasks -->
@@ -56,8 +63,8 @@
                 </a>
             </div>
 
-            <div class="search-bar">
-                <img src="images/icons/search.png" alt="Magnifying glass icon">
+            <div class="search-bar-container">
+                <img src="images/icons/search.png" class="medium-icon" alt="Magnifying glass icon">
                 <input list="existing-tasks-select" name="tasks-search" id="tasks-search" class="search-input" placeholder="Search tasks">
                 <datalist id="existing-tasks-select">
 
@@ -67,17 +74,85 @@
                 </datalist>
             </div>
             
-            <a href="">
-                <img src="images/icons/add-task.png" class="add-task-button" alt="Blue circle with white plus symbol for adding tasks">
+            <a href="" class="add-task-container">
+                <img src="images/icons/add-task.png" class="add-task-button large-button" alt="Blue circle with white plus symbol for adding tasks">
             </a>
         </section>
 
         <section id="tasks-page">
-            
+
+            <h2>All Tasks</h2>
+            <h3 class="live-date">Friday 30th June</h3>
+
+            <div><p>Show completed + Toggle Button</p></div>
+
+            <div>
+
+                <!-- Lists of tasks to be generated here -->
+                <!-- See images folders for icons -->
+                <!-- There is a class called medium-icon for the icon height -->
+                <!-- Could do this with a grid? This page is great for creating grids:  https://grid.layoutit.com/ -->
+
+            </div>
+
+            <a href="" class="add-task-container">
+                <img src="images/icons/add-task.png" class="add-task-button large-button" alt="Blue circle with white plus symbol for adding tasks">
+            </a>
+        </section>
+
+        <section id="create-task-page">
+
+            <h2>Create Task</h2>
+            <h3 class="live-date">Friday 30th June</h3>
+
+            <form>
+                <label for="task-title">Title</label>
+                <input type="text" name="task-title" id="task-title">
+
+                <label for="task-notes">Add notes</label>
+                <textarea name="task-notes" id="task-notes"></textarea>
+
+                <label for="task-category">Add category</label>
+
+                <button type="submit" class="" name="" value="Submit">
+                    <img src="images/icons/completed.png" class="large-button" alt="Blue circl with white tick to submit task">
+                </button>
+                <button type="">
+                    <img src="images/icons/cancel.png" class="large-button" alt="Blue circle with cross to cancel adding task">
+                </button>
+            </form>
+        </section>
+
+        <section id="edit-task-page">
+
+            <h2>Edit Task</h2>
+            <h3 class="live-date">Friday 30th June</h3>
+
+            <!-- I put in input placeholers but don't mind if you want to remove them -->
+            <form>
+                <label for="task-title">Title</label>
+                <input type="text" name="task-title" id="task-title" placeholder="Build a time machine">
+
+                <label for="task-notes">Add notes</label>
+                <textarea name="task-notes" id="task-notes" placeholder="Find laboratory. Learn physics."></textarea>
+
+                <label for="task-category">Add category</label>
+                <input type="text" name="task-category" id="task-category" placeholder="DIY">
+
+
+                <button type="submit" class="" name="" value="Submit">
+                    <img src="images/icons/completed.png" class="large-button" alt="Blue circl with white tick to submit task">
+                </button>
+                <button type="">
+                    <img src="images/icons/cancel.png" class="large-button" alt="Blue circle with cross to cancel adding task">
+                </button>
+            </form>
         </section>
 
         <footer>
-            
+            <!-- 
+                Do we need anything in the footer?
+            -->
         </footer>
     </main>
 </body>

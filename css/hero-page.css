@@ -1,0 +1,11 @@
+#all-tasks .tasks-number {
+    color: var(--medium-grey-text);
+}
+
+#outstanding-tasks .tasks-number {
+    color: var(--darker-green);
+}
+
+#completed-tasks .tasks-number {
+    color: var(--darker-blue);
+}
