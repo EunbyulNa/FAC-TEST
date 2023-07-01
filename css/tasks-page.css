@@ -66,17 +66,14 @@
 .item-list-container{
     max-width: 35rem;
     margin-top: var( --m-spacing);
-    margin: 0 auto;  
 }
 
 .item-list {
-    display: grid;
     grid-template-columns: 0.4fr 3.5fr 1fr; 
 }
 
 .outstanding-icon {
     cursor: pointer;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -84,10 +81,30 @@
 
 .user-controls{
     cursor: pointer;
-    display: flex;
     justify-content: space-around;
     align-items: center;
 }
+
+
+@media (min-width: 300px) {
+
+.item-list {
+    grid-template-columns: 0.5fr 2fr 1fr; 
+}
+
+.list-txt p {
+    margin: 0;
+}
+  
+  }
+
+  @media (min-width: 600px) {
+  
+  }
+
+  @media (min-width: 768px) {
+   
+  }
 
 
 
