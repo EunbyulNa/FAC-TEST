@@ -63,15 +63,19 @@
 	transform: translateX(-100%);
 }
 
-.item-list {
+.item-list-container{
     max-width: 35rem;
-    padding-top: var( --m-spacing);
-    margin: 0 auto;
+    margin-top: var( --m-spacing);
+    margin: 0 auto;  
+}
+
+.item-list {
     display: grid;
     grid-template-columns: 0.4fr 3.5fr 1fr; 
 }
 
 .outstanding-icon {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,8 +83,11 @@
 
 
 .user-controls{
+    cursor: pointer;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
+
+
 

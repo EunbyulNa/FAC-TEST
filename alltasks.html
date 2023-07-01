@@ -14,7 +14,7 @@
    
         <header class="header center">   
             <nav class="nav-bar" >
-            <a href="index.html">
+            <a href="index.html" tabindex="1">
             <img src="images/icons/home.png" class="large-icon" alt="Home icon">
             </a>
            </nav>
@@ -29,35 +29,37 @@
       
 
         <div class="toggle-container flex">
-           
-
             <p class="">Show completed</p>
-            <div class="toggle-btn flex">
+            <div class="toggle-btn flex" tabindex="2">
                 <input type="checkbox" id="switch" />
                 <label id="toggle-label" for="switch">Toggle</label>
             </div>
             
         </div>
 
-       
-          <div class="item-list">
-            <div class="outstanding-icon">
-                <img class='medium-icon'src="./images/icons/outstanding.png" alt="">
-            </div>
-            <div class="list-txt">
-              <p id="list-txt-title">Build a tree house</p>
-              <p id="list-txt-note">Lorem ipsum dolor da dmaet</p>
-            </div>
-          
-           <div class="user-controls">
-            <img  class='medium-icon' src="./images/user-controls/completed-control.png"id="completed-icon">     
-            <img  class='medium-icon' src="./images/user-controls/edit-control.png"id="edit-icon">       
-            <img   class='medium-icon'src="./images/user-controls/delete-control.png"id="delete-icon">   
-           </div>       
-         </div>
+        <div class="item-list-container" tabindex="3">
+            <div class="item-list">
+                <div class="outstanding-icon" tabindex="4">
+                    <img class='medium-icon'src="./images/icons/outstanding.png" alt="">
+                </div>
+                <div class="list-txt" tabindex="5">
+                  <p id="list-txt-title" tabindex="6">Build a tree house</p>
+                  <p id="list-txt-note" tabindex="7">Lorem ipsum dolor da dmaet</p>
+                </div>
+              
+               <div class="user-controls" tabindex="8">
+                <img tabindex="9"class='medium-icon' src="./images/user-controls/completed-control.png"id="completed-icon">     
+                <img tabindex="10"class='medium-icon' src="./images/user-controls/edit-control.png"id="edit-icon">       
+                <img tabindex="11"class='medium-icon' src="./images/user-controls/delete-control.png"id="delete-icon">   
+               </div>       
+             </div>
+
+             
+        </div>
+         
    
 
-        <div class="search-bar-container flex center">
+        <div class="search-bar-container flex center"  tabindex="12">
             <input list="existing-tasks-select" name="tasks-search" id="tasks-search" class="search-input search-img" placeholder="Search tasks">
             <datalist id="existing-tasks-select">
 
@@ -67,7 +69,7 @@
             </datalist>
         </div>
         
-        <a href="" class="add-task-container flex">
+        <a href="" class="add-task-container flex"  tabindex="13">
             <img src="images/icons/add-task.png" class="add-task-button large-button" alt="Blue circle with white plus symbol for adding tasks">
         </a>
 
