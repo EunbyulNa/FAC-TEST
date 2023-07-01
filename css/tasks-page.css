@@ -1,6 +1,5 @@
 #tasks-page{
     max-width: 60rem;   
-
 }
 
 #tasks-page .live-date {
@@ -8,13 +7,11 @@
     font-weight: 400;
 }
 
-.tasks-title-container {
-   
+.tasks-title-container {   
     text-align: center;
 }
 
 .toggle-container {
- 
     justify-content: center;
 }
 
@@ -23,10 +20,9 @@
 }
 
 .toggle-btn {
-   margin-left: var( --xs-spacing);
-  
-    justify-content: center;
-    align-items: center;
+   margin-left: var( --xs-spacing);  
+   justify-content: center;
+   align-items: center;
 }
 
 #switch {
@@ -66,3 +62,25 @@
 	left: calc(100% - 5px);
 	transform: translateX(-100%);
 }
+
+.item-list {
+    max-width: 35rem;
+    padding-top: var( --m-spacing);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.4fr 3.5fr 1fr; 
+}
+
+.outstanding-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.user-controls{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
