@@ -1,16 +1,96 @@
+.header {
+    max-width: 60rem;   
+} 
+
+#hero-page .live-date {
+    font-size: 1em;
+    font-weight: 400;
+}
+
+ #hero-page { 
+    max-width: 60rem;   
+}
+
+
+.list-type-container{
+    margin-top: var(--m-spacing);
+    max-width: 35rem; 
+    gap: var(--m-spacing);  
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: var( --box-shadow);
+}
+
+#all-tasks {
+    background-color: var(--pure-white);    
+}
+
 #all-tasks .tasks-number {
     color: var(--medium-grey-text);
+}
+
+#outstanding-tasks {
+    background-color: var(--pale-green);   
 }
 
 #outstanding-tasks .tasks-number {
     color: var(--darker-green);
 }
 
+#completed-tasks {
+    background-color: var(--pale-blue-layout); 
+}
+
 #completed-tasks .tasks-number {
     color: var(--darker-blue);
 }
 
-#hero-page .live-date {
-    font-size: 1em;
-    font-weight: 400;
+.search-bar-container {
+    margin-top: var(--m-spacing);
+    padding: var(--xs-spacing);  
+    max-width: 35rem;
+    justify-content: center;
+    background-color:var(--input-field-grey);
+    box-shadow: var( --box-shadow);
 }
+
+.search-img { 
+    padding-left: var(--m-spacing);  
+    background: url(../images/icons/search.png) no-repeat left;
+    background-size: 15px;   
+}
+
+.search-input {  
+    border: none;
+    margin-left: 5rem;
+}
+
+
+.add-task-container{
+    margin-top: var(--m-spacing);
+    justify-content: center;  
+}
+
+
+
+@media (min-width: 300px) {
+    .header {display: none;}
+    .title-container{text-align: left;}
+    .list-type-container { grid-template-columns: repeat(2, 1fr); }
+    .card {padding: 1rem};
+  }
+
+  @media (min-width: 600px) {
+    .header {display: block; padding: var(--s-spacing);}
+    .title-container{ text-align: center;}
+    .list-type-container  { grid-template-columns: repeat(3, 1fr); }
+    
+  }
+
+  @media (min-width: 768px) {
+    .list-type-container  { grid-template-columns: repeat(3, 1fr); }
+    .card {padding: 2rem};
+  }
+
