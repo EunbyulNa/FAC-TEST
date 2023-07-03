@@ -1,3 +1,15 @@
-form > * {
+form > *, #create-task-inner h2, #create-task-inner h3 {
     display: block;
 }
+
+#create-task-inner {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%); /* This centers the pop-up despite the absolute positioning! */
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid black;
+  }

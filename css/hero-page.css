@@ -9,7 +9,8 @@
 }
 
  #hero-page { 
-    max-width: 60rem;   
+    /* max-width: 60rem;    */
+    width: 100%;
 }
 
 

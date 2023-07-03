@@ -70,6 +70,7 @@ section {
     min-height: 100vh;
     overflow: auto;
     padding: var(--ml-spacing);
+    position: relative;
 }
 
  

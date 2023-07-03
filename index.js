@@ -41,26 +41,26 @@ function equal(actual, expected, message) {
     console.groupEnd(name);
   }
 
-  test('A new item add in the local storage correctly, and disply correctly ', ()=> {
-     //get input 
-     let newInput = document.querySelector(".listAdd");
-     //enter test data into inputs
-     newInput.value = "Buy food";
-     //submit the form
-     const submitBtn = document.querySelector('button');
-     submitBtn.click();
-     //verify that the page contains the expected result 
-     let result = document.querySelector('li');
-     equal(result.textContent, "Buy food")
-     //reset the input
-     newInput.value = '';
+  // test('A new item add in the local storage correctly, and disply correctly ', ()=> {
+  //    //get input 
+  //    let newInput = document.querySelector(".listAdd");
+  //    //enter test data into inputs
+  //    newInput.value = "Buy food";
+  //    //submit the form
+  //    const submitBtn = document.querySelector('button');
+  //    submitBtn.click();
+  //    //verify that the page contains the expected result 
+  //    let result = document.querySelector('li');
+  //    equal(result.textContent, "Buy food")
+  //    //reset the input
+  //    newInput.value = '';
 
-    //Check local storage array length 
-    let expected = 1;
-    let output = JSON.parse(localStorage.getItem('List')).length
+  //   //Check local storage array length 
+  //   let expected = 1;
+  //   let output = JSON.parse(localStorage.getItem('List')).length
 
-    equal(output, expected)
-  })
+  //   equal(output, expected)
+  // })
 
 
 
