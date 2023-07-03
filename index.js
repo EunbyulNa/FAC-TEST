@@ -1,22 +1,25 @@
 let allTaskCard = document.querySelector('#allTask');
-let listContainer = document.querySelector('.list-type-container');
+let listWrap = document.querySelector('.list-wrap');
 let tasksPage = document.querySelector('#tasks-page');
-let home = document.querySelector('#home')
+let homeIcon = document.querySelector('#home');
 
-const showHideAllTask = (e) => {
-  e.preventDefault()
-  listContainer.style.display = 'none';
-  tasksPage.style.display = 'block'
+const showAllTaskPage = (e) => {
+  e.preventDefault();
+  listWrap.style.display = 'none';
+  tasksPage.style.display = 'block';
  }
  
- const backMainPage = (e) => {
-  e.preventDefault()
- 
-  tasksPage.style.display = 'none'
+ const goBackToMain = (e) => {
+  e.preventDefault();
+  listWrap.style.display = 'block';
+  tasksPage.style.display = 'none';
  }
  
 
-allTaskCard.addEventListener('click', showHideAllTask)
-home.addEventListener('click', backMainPage)
+allTaskCard.addEventListener('click', showAllTaskPage);
+homeIcon.addEventListener('click', goBackToMain);
+
+
+
 
 
