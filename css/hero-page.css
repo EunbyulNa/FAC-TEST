@@ -1,5 +1,4 @@
-.header {
-   
+.header {   
     max-width: 60rem;   
 } 
 
@@ -77,14 +76,14 @@
 
 
 @media (min-width: 300px) {
-    .header {display: none;}
+    .header { padding:var(--s-spacing); }
     .title-container{text-align: left;}
     .list-type-container { grid-template-columns: repeat(2, 1fr); }
     .card {padding: 1rem};
   }
 
   @media (min-width: 600px) {
-    .header {display: block; padding: var(--s-spacing);}
+
     .title-container{ text-align: center;}
     .list-type-container  { grid-template-columns: repeat(3, 1fr); }
     
