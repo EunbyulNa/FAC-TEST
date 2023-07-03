@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do - Testing</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/hero-page.css">
+    <link rel="stylesheet" href="css/tasks-page.css">
+    <link rel="stylesheet" href="css/create-edit-task.css">
+</head>
+<body>
+   
+        <header class="header center">   
+            <nav class="nav-bar" >
+            <a href="index.html" tabindex="1">
+            <img src="images/icons/home.png" class="large-icon" alt="Home icon">
+            </a>
+           </nav>
+        </header>
+
+        <section id="tasks-page center">
+
+        <div class="tasks-title-container">
+            <h1>All Tasks</h1>
+            <h2 class="live-date">Friday 30th June</h3>
+        </div>
+      
+
+        <div class="toggle-container flex">
+            <p class="">Show completed</p>
+            <div class="toggle-btn flex" tabindex="2">
+                <input type="checkbox" id="switch">
+                <label id="toggle-label" for="switch">Toggle</label>
+            </div>
+            
+        </div>
+
+        <div class="item-list-container center" tabindex="3">
+            <div class="item-list grid">
+                <div class="outstanding-icon flex" tabindex="4">
+                    <img class='medium-icon'src="./images/icons/outstanding.png" alt="">
+                </div>
+                <div class="list-txt" tabindex="5">
+                  <p id="list-txt-title" tabindex="6">Build a tree house</p>
+                  <p id="list-txt-note" tabindex="7">Lorem ipsum dolor da dmaet</p>
+                </div>
+              
+               <div class="user-controls flex" tabindex="8">
+                <img tabindex="9"class='medium-icon' src="./images/user-controls/completed-control.png"id="completed-icon">     
+                <img tabindex="10"class='medium-icon' src="./images/user-controls/edit-control.png"id="edit-icon">       
+                <img tabindex="11"class='medium-icon' src="./images/user-controls/delete-control.png"id="delete-icon">   
+               </div>       
+             </div>
+
+             
+        </div>
+         
+   
+
+        <div class="search-bar-container flex center"  tabindex="12">
+            <input list="existing-tasks-select" name="tasks-search" id="tasks-search" class="search-input search-img" placeholder="Search tasks">
+            <datalist id="existing-tasks-select">
+
+                <!-- These need to be added with JS when the user adds a task -->
+                <option value="Task Title Placeholder">Task Notes Placeholder</option>
+
+            </datalist>
+        </div>
+        
+        <a href="" class="add-task-container flex"  tabindex="13">
+            <img src="images/icons/add-task.png" class="add-task-button large-button" alt="Blue circle with white plus symbol for adding tasks">
+        </a>
+
+
+</body>
+<script src="index.js"></script>
+</html>
