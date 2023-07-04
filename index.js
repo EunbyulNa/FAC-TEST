@@ -2,6 +2,20 @@ let allTaskCard = document.querySelector('#allTask');
 let listWrap = document.querySelector('.list-wrap');
 let tasksPage = document.querySelector('#tasks-page');
 let homeIcon = document.querySelector('#home');
+let liveDate = document.querySelector('.live-date');
+
+const date = new Date();
+const options = {
+  weekday:"long",
+  day:"numeric",
+  month:"long",
+  year:"numeric"
+};
+
+const todayDate = date.toLocaleString("en-GB", options);
+
+liveDate.innerHTML = todayDate
+
 
 const showAllTaskPage = (e) => {
   e.preventDefault();
