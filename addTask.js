@@ -17,9 +17,9 @@ function addUserTask() {
             </div>
         
             <div class="user-controls flex" tabindex="8">
-                <img tabindex="9"class='medium-icon' src="./images/user-controls/completed-control.png" class="completed-icon">     
-                <img tabindex="10"class='medium-icon' src="./images/user-controls/edit-control.png" class="edit-icon">       
-                <img tabindex="11"class='medium-icon' src="./images/user-controls/delete-control.png" class="delete-icon">   
+                <img tabindex="9"class='completed-icon medium-icon' src="./images/user-controls/completed-control.png">     
+                <img tabindex="10"class='edit-icon medium-icon' src="./images/user-controls/edit-control.png">       
+                <img tabindex="11"class='delete-icon medium-icon' src="./images/user-controls/delete-control.png">   
             </div>       
         </div> `;
 
@@ -28,6 +28,14 @@ function addUserTask() {
 
         taskList.insertAdjacentHTML('beforeend', taskItemHTML);
         searchTaskList.insertAdjacentHTML('beforeend', searchTaskItemHTML);
+
+
+        let edits = document.querySelectorAll('.edit-icon');
+        edits.forEach((edit)=> {
+            edit.addEventListener('click', function(){
+                console.log('edit')
+            })
+        })
         closePopUp();
     }
   };
@@ -37,4 +45,5 @@ addTaskForm.addEventListener('submit', (e) => {
     e.preventDefault();
     addUserTask();
 });
+
 
