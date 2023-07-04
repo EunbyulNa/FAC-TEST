@@ -6,6 +6,8 @@ function openCreateTaskPopUp() {
 
 // Function to close the pop-up
 function closePopUp() {
+    userTaskTitle.value = '';
+    userTaskDescription.value = '';
     createTaskPop.style.display = 'none';
     console.log('Pop-up closed');
 }
@@ -18,7 +20,6 @@ let addTaskForm = document.getElementById('add-task-form');
 let userTaskTitle = document.getElementById('task-title');
 let userTaskDescription = document.getElementById('task-notes');
 
-
 // Event listeners
 addTaskBtn.addEventListener('click', (event) => {
     event.preventDefault();
@@ -29,14 +30,11 @@ for (let i = 0; i < cancelTaskBtn.length; i++) {
     cancelTaskBtn[i].addEventListener('click', closePopUp);
 }
     
-// // Add user task to the list
+// Add user task to the list
 
 addTaskForm.addEventListener('submit', (e) => {
     e.preventDefault();
     console.log('Submitted');
     console.log(userTaskTitle.value);
     console.log(userTaskDescription.value);
-
-
-
   });
