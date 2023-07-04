@@ -72,6 +72,12 @@
 
 .item-list {
     grid-template-columns: 0.4fr 3.5fr 1fr; 
+    padding: 1em 0;
+}
+
+.list-txt-note {
+    font-style: italic;
+    font-size: 0.8rem;
 }
 
 .outstanding-icon {
@@ -82,7 +88,7 @@
 
 
 .user-controls{
-    cursor: pointer;
+    /* cursor: pointer; */
     justify-content: space-around;
     align-items: center;
 }
