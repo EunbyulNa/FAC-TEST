@@ -3,6 +3,7 @@ form > *, #create-task-inner h2, #create-task-inner h3 {
 }
 
 #create-task-inner {
+    z-index: 100;
     display: none;
     position: absolute;
     left: 50%;

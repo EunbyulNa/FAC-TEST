@@ -1,7 +1,7 @@
 #tasks-page {
     max-width: 60rem; 
     margin: 0 auto;
-   display: none;
+   display: block;
 }
 
 
