@@ -34,6 +34,3 @@ allTaskCard.addEventListener('click', showAllTaskPage);
 homeIcon.addEventListener('click', goBackToMain);
 
 
-
-
-

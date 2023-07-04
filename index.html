@@ -28,7 +28,34 @@
                 <h3 class="live-date"></h3>
             </div>
 
+
+            <!-- display set to none by default
+                changed to grid upon button click -->
+            <div id="create-task-inner">
+                <h2>Create Task</h2>
+                <h3 class="live-date small-text">Friday 30th June</h3>
+    
+                <form class="small-text">
+                    <label for="task-title">Title</label>
+                    <input type="text" name="task-title" id="task-title">
+    
+                    <label for="task-notes">Add notes</label>
+                    <textarea name="task-notes" id="task-notes"></textarea>
+    
+                    <label for="task-category">Add category</label>
+    
+                    <button type="submit" class="" name="" value="Submit">
+                        <img src="images/icons/completed.png" class="large-button" alt="Blue circle with white tick to submit task">
+                    </button>
+                    <button type="">
+                        <img src="images/icons/cancel.png" class="large-button" alt="Blue circle with cross to cancel adding task">
+                    </button>
+                </form>
+            </div>
+
+
             <div class="list-wrap">
+
             <div class="list-type-container grid center">
                 <!-- href will redirect to tasks page with a filter to show ALL tasks -->
                 <a href="" id="allTask">
@@ -98,37 +125,13 @@
             </div>
             
             <a href="" class="add-task-container flex">
-                <img src="images/icons/add-task.png" class="add-task-button large-button" alt="Blue circle with white plus symbol for adding tasks">
+                <img src="images/icons/add-task.png" id="add-task-button" class="add-task-button large-button" alt="Blue circle with white plus symbol for adding tasks">
             </a>
-        </section>
 
-      
+            
+        </section>
 
     
-
-
-        <section id="create-task-page">
-
-            <h2>Create Task</h2>
-            <h3 class="live-date small-text">Friday 30th June</h3>
-
-            <form class="small-text">
-                <label for="task-title">Title</label>
-                <input type="text" name="task-title" id="task-title">
-
-                <label for="task-notes">Add notes</label>
-                <textarea name="task-notes" id="task-notes"></textarea>
-
-                <label for="task-category">Add category</label>
-
-                <button type="submit" class="" name="" value="Submit">
-                    <img src="images/icons/completed.png" class="large-button" alt="Blue circle with white tick to submit task">
-                </button>
-                <button type="">
-                    <img src="images/icons/cancel.png" class="large-button" alt="Blue circle with cross to cancel adding task">
-                </button>
-            </form>
-        </section>
 
         <section id="edit-task-page">
 
@@ -164,4 +167,5 @@
     </main>
 </body>
 <script src="index.js"></script>
+<script src="popUp.js"></script>
 </html>
