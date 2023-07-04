@@ -1,31 +1,42 @@
-// VARIABLES
-    // the create/edit task pop up boxes
-    let createTaskPop = document.getElementById('create-task-inner');   
+// Function to open the create task pop-up
+function openCreateTaskPopUp() {
+    createTaskPop.style.display = 'grid';
+    console.log('Create task pop-up opened');
+}
 
-    //  BUTTON VARIABLES
-        // the blue plus button for adding a new task
-    let addTaskBtn = document.getElementById('add-task-button');
+// Function to close the pop-up
+function closePopUp() {
+    createTaskPop.style.display = 'none';
+    console.log('Pop-up closed');
+}
+
+// Variables
+let createTaskPop = document.getElementById('create-task-inner');
+let addTaskBtn = document.getElementById('add-task-button');
+let cancelTaskBtn = document.querySelectorAll('.cancel-button');
+let addTaskForm = document.getElementById('add-task-form');
+let userTaskTitle = document.getElementById('task-title');
+let userTaskDescription = document.getElementById('task-notes');
+
+
+// Event listeners
+addTaskBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    openCreateTaskPopUp();
+});
+
+for (let i = 0; i < cancelTaskBtn.length; i++) {
+    cancelTaskBtn[i].addEventListener('click', closePopUp);
+}
     
-        // close pop up blue cross button
-    let cancelTaskBtn = document.querySelectorAll('.cancel-button');
-    
-    
-    // EVENT LISTENERS
-      
-    // open create task pop up
-    addTaskBtn.addEventListener('click', (event) => {
-        event.preventDefault();
-        createTaskPop.style.display = 'grid';
-    
-        console.log('Create task pop up opened');
-    });
-    
-    // close popup
-    for (let i = 0; i < cancelTaskBtn.length; i++) {
-        cancelTaskBtn[i].addEventListener('click', () => {
-            createTaskPop.style.display = 'none';
-            console.log('Closed popup');
-        });
-    }
-    
-    
+// // Add user task to the list
+
+addTaskForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log('Submitted');
+    console.log(userTaskTitle.value);
+    console.log(userTaskDescription.value);
+
+
+
+  });
