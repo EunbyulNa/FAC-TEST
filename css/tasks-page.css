@@ -88,7 +88,7 @@
 
 
 .user-controls{
-    cursor: pointer;
+    /* cursor: pointer; */
     justify-content: space-around;
     align-items: center;
 }

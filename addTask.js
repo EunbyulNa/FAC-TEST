@@ -1,10 +1,8 @@
 let searchTaskList = document.getElementById('existing-tasks-select');
-let searchTaskItemHTML = '';
 
 // Add user task to the list
-
-addTaskForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+ 
+function addUserTask() {
     if (userTaskTitle.value == "" || userTaskDescription.value == "") {
         alert("Please fill in all fields.");} 
     else {
@@ -19,19 +17,24 @@ addTaskForm.addEventListener('submit', (e) => {
             </div>
         
             <div class="user-controls flex" tabindex="8">
-                <img tabindex="9"class='medium-icon' src="./images/user-controls/completed-control.png"id="completed-icon">     
-                <img tabindex="10"class='medium-icon' src="./images/user-controls/edit-control.png"id="edit-icon">       
-                <img tabindex="11"class='medium-icon' src="./images/user-controls/delete-control.png"id="delete-icon">   
+                <img tabindex="9"class='medium-icon' src="./images/user-controls/completed-control.png" class="completed-icon">     
+                <img tabindex="10"class='medium-icon' src="./images/user-controls/edit-control.png" class="edit-icon">       
+                <img tabindex="11"class='medium-icon' src="./images/user-controls/delete-control.png" class="delete-icon">   
             </div>       
         </div> `;
 
         
-        searchTaskItemHTML = 
-        `<option value="${userTaskTitle.value}"></option>`;
+        let searchTaskItemHTML = `<option value="${userTaskTitle.value}"></option>`;
 
         taskList.insertAdjacentHTML('beforeend', taskItemHTML);
         searchTaskList.insertAdjacentHTML('beforeend', searchTaskItemHTML);
-        console.log('Task Added');
         closePopUp();
     }
-  });
+  };
+
+// adds listener to tick button to add the task
+addTaskForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    addUserTask();
+});
+
