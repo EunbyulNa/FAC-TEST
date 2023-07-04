@@ -1,11 +1,20 @@
-form > *:not(:first-child) {
-    padding-top: 1.5em;}
+/* form > *:not(:first-child) {
+    margin-top: var(--m-spacing);} */
 
-input, textarea, label, #create-task-inner h2, #create-task-inner h3 {
+input[type="text"], textarea, label, #create-task-inner h2, #create-task-inner h3 {
     display: block;
 }
 
+input[type="text"], textarea, #create-task-inner h2 {
+  margin-bottom: var(--m-spacing);
+}
+
+#create-task-inner h2 {
+  text-align: center;
+}
+
 #create-task-inner {
+    align-content: center;
     z-index: 100;
     display: none;
     position: absolute;
@@ -14,12 +23,28 @@ input, textarea, label, #create-task-inner h2, #create-task-inner h3 {
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%); /* This centers the pop-up despite the absolute positioning! */
-    text-align: center;
     padding: 20px;
     background-color: white;
-    border: 1px solid black;
+    box-shadow: var(--box-shadow);
+    border-radius: 25px;
   }
 
-  input, textarea, label {
+  input[type="text"], textarea, label {
     width: 100%;
+  }
+
+  input[type=text]:focus, textarea:focus {
+    background-color:  var(--input-field-grey-text);  
+  }
+
+  input[type="text"], textarea {
+    background-color: var(--input-field-grey);
+    border: none;
+    padding: 1em;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  .buttons-container {
+    text-align: center;
   }

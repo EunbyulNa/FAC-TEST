@@ -19,6 +19,8 @@ let cancelTaskBtn = document.querySelectorAll('.cancel-button');
 let addTaskForm = document.getElementById('add-task-form');
 let userTaskTitle = document.getElementById('task-title');
 let userTaskDescription = document.getElementById('task-notes');
+let taskItemHTML = "";
+let taskList = document.getElementById('list-container');
 
 // Event listeners
 addTaskBtn.addEventListener('click', (event) => {
@@ -30,11 +32,4 @@ for (let i = 0; i < cancelTaskBtn.length; i++) {
     cancelTaskBtn[i].addEventListener('click', closePopUp);
 }
     
-// Add user task to the list
-
-addTaskForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    console.log('Submitted');
-    console.log(userTaskTitle.value);
-    console.log(userTaskDescription.value);
-  });
+  

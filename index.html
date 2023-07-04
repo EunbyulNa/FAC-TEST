@@ -45,13 +45,14 @@
     
                     <!-- <label for="task-category">Add category</label> -->
 
-    
-                    <button type="submit" class="" name="" value="Submit">
-                        <img src="images/icons/completed.png" class="large-button" alt="Blue circle with white tick to submit task">
-                    </button>
-                    <button type="button" class="cancel-button">
-                        <img src="images/icons/cancel.png" class="large-button" alt="Blue circle with cross to cancel adding task">
-                    </button>
+                    <div class="buttons-container">
+                        <button type="submit" class="" name="" value="Submit">
+                            <img src="images/icons/completed.png" class="large-button" alt="Blue circle with white tick to submit task">
+                        </button>
+                        <button type="button" class="cancel-button">
+                            <img src="images/icons/cancel.png" class="large-button" alt="Blue circle with cross to cancel adding task">
+                        </button>
+                    </div>
                 </form>
             </div>
 
@@ -97,14 +98,14 @@
                     </div>    
                 </div>
         
-                <div class="item-list-container center" tabindex="3">
+                <div class="item-list-container center" tabindex="3" id="list-container">
                     <div class="item-list grid">
                         <div class="outstanding-icon flex" tabindex="4">
                             <img class='medium-icon'src="./images/icons/outstanding.png" alt="">
                         </div>
                         <div class="list-txt" tabindex="5">
-                          <p id="list-txt-title" tabindex="6">Build a tree house</p>
-                          <p id="list-txt-note" tabindex="7">Lorem ipsum dolor da dmaet</p>
+                          <p class="list-txt-title" tabindex="6">Click on the button below to get started.</p>
+                          <p class="list-txt-note" tabindex="7">Time to get organised!</p>
                         </div>
                       
                        <div class="user-controls flex" tabindex="8">
@@ -121,7 +122,7 @@
                 <datalist id="existing-tasks-select">
 
                     <!-- These need to be added with JS when the user adds a task -->
-                    <option value="Task Title Placeholder">Task Notes Placeholder</option>
+                    <!-- <option value="Task Title Placeholder">Task Notes Placeholder</option> -->
 
                 </datalist>
             </div>
@@ -170,4 +171,5 @@
 </body>
 <script src="index.js"></script>
 <script src="popUp.js"></script>
+<script src="addTask.js"></script>
 </html>
