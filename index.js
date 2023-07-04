@@ -18,7 +18,7 @@ liveDates.forEach((date)=> {
   date.innerHTML = todayDate
 })
 
-
+/*
 const showAllTaskPage = (e) => {
   e.preventDefault();
   listWrap.style.display = 'none';
@@ -34,5 +34,5 @@ const showAllTaskPage = (e) => {
 
 allTaskCard.addEventListener('click', showAllTaskPage);
 homeIcon.addEventListener('click', goBackToMain);
-
+*/
 
