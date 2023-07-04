@@ -1,17 +1,18 @@
-#tasks-page{
-    max-width: 60rem;   
+#tasks-page {
+    max-width: 60rem; 
+    margin: 0 auto;
+   display: none;
 }
+
 
 #tasks-page .live-date {
     font-size: 1em;
     font-weight: 400;
 }
 
-.tasks-title-container {   
-    text-align: center;
-}
 
 .toggle-container {
+
     justify-content: center;
 }
 
@@ -64,6 +65,7 @@
 }
 
 .item-list-container{
+   
     max-width: 35rem;
     margin-top: var( --m-spacing);
 }
