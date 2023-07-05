@@ -29,13 +29,43 @@ function addUserTask() {
         taskList.insertAdjacentHTML('beforeend', taskItemHTML);
         searchTaskList.insertAdjacentHTML('beforeend', searchTaskItemHTML);
 
-
+      
         let edits = document.querySelectorAll('.edit-icon');
+        let completedIcons = document.querySelectorAll('.completed-icon');
+        let outstandingIcons = document.querySelectorAll('.outstanding-icon');
+
+        const changeToCompleted = (e) => { 
+          const completedIcon = e.target
+          if(completedIcon){
+            const outstandingIcon = completedIcon.parentElement.parentElement.querySelector('.outstanding-icon img');
+            outstandingIcon.id = 'done'
+            outstandingIcon.src = './images/user-controls/completed-control.png';
+          }
+        }
+
+       const changeToOutstanding = (e) => {
+        const outStadningIcon = e.target;
+        outStadningIcon.id = 'outstadning'
+        outStadningIcon.src = './images/icons/outstanding.png';
+       }
+
+        completedIcons.forEach((completed)=> {
+            completed.addEventListener('click',  changeToCompleted)
+        })
+
+        outstandingIcons.forEach((outstanding)=> {
+            outstanding.addEventListener('click',  changeToOutstanding)
+        })
+
+
+
         edits.forEach((edit)=> {
             edit.addEventListener('click', function(){
-                console.log('edit')
+                //console.log('edit')
+               
             })
         })
+        
         closePopUp();
     }
   };
@@ -45,5 +75,15 @@ addTaskForm.addEventListener('submit', (e) => {
     e.preventDefault();
     addUserTask();
 });
+
+let toggleSwitch = document.querySelector('#switch');
+
+const showCompleted = () => {
+  if(toggleSwitch.checked === true){
+    console.log('on')
+  }
+}
+
+ toggleSwitch.addEventListener('click', showCompleted)
 
 
