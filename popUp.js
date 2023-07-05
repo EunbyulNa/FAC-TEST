@@ -15,6 +15,10 @@ let tasks = [{
     title: 'Click on the button below to get started.',
     description: 'Time to get organised!',
     first: true,
+    completedIcon: '<img tabindex="9" src="./images/user-controls/completed-control.png" class="completed-icon medium-icon">',
+    editIcon: '<img tabindex="10" src="./images/user-controls/edit-control.png" class="edit-icon medium-icon">',
+    deleteIcon: '<img tabindex="11" src="./images/user-controls/delete-control.png" class="delete-icon medium-icon">',     
+
 }];
 
 function renderTasksDOM() {
@@ -29,9 +33,9 @@ function renderTasksDOM() {
                         </div>
                       
                        <div class="user-controls flex" tabindex="8">
-                        <img tabindex="9" src="./images/user-controls/completed-control.png" class="completed-icon medium-icon">     
-                        <img tabindex="10" src="./images/user-controls/edit-control.png" class="edit-icon medium-icon">       
-                        <img tabindex="11" src="./images/user-controls/delete-control.png" class="delete-icon medium-icon">   
+                        ${tasks[tasks.length - 1].completedIcon}
+                        ${tasks[tasks.length - 1].editIcon}
+                        ${tasks[tasks.length - 1].deleteIcon}
                        </div>       
                      </div> 
     `;
@@ -62,6 +66,10 @@ function addUserTask() {
         tasks.push({
             title: userTaskTitle.value,
             description: userTaskDescription.value,
+            completedIcon: '<img tabindex="9" src="./images/user-controls/completed-control.png" class="completed-icon medium-icon">',
+            editIcon: '<img tabindex="10" src="./images/user-controls/edit-control.png" class="edit-icon medium-icon">',
+            deleteIcon: '<img tabindex="11" src="./images/user-controls/delete-control.png" class="delete-icon medium-icon">',     
+
         });
         closeAddPopUp();
     }
@@ -101,35 +109,47 @@ addTaskBtn.addEventListener('click', (event) => {
     openCreateTaskPopUp();
 });
 
+// Makes the complete task, and delete task icons function
 function activateUserControls() {
-    let completedIcons = document.querySelectorAll('.completed-icon');
-    let outstandingIcons = document.querySelectorAll('.outstanding-icon-img');
-
-    const changeToCompleted = (e) => { 
-        console.log('click')
-    const completedIcon = e.target
-    if(completedIcon){
-        const outstandingIcon = completedIcon.parentElement.parentElement.querySelector('.outstanding-icon img');
-        outstandingIcon.id = 'done'
-        outstandingIcon.src = './images/user-controls/completed-control.png';
+    const completedIcons = document.querySelectorAll('.completed-icon');
+    const outstandingIcons = document.querySelectorAll('.outstanding-icon');
+    const deleteIcons = document.querySelectorAll('.delete-icon');
+  
+    completedIcons.forEach((completed) => {
+      completed.addEventListener('click', changeToCompleted);
+    });
+  
+    outstandingIcons.forEach((outstanding) => {
+      outstanding.addEventListener('click', changeToOutstanding);
+    });
+  
+    deleteIcons.forEach((del) => {
+      del.addEventListener('click', deleteTask);
+    });
+  }
+  
+  function changeToCompleted(e) {
+    console.log('click');
+    const completedIcon = e.target;
+    if (completedIcon) {
+      const outstandingIcon = completedIcon.parentElement.parentElement.querySelector('.outstanding-icon img');
+      outstandingIcon.id = 'done';
+      outstandingIcon.src = './images/user-controls/completed-control.png';
     }
-    }
-
-    const changeToOutstanding = (e) => {
-        console.log('ch')
-        const outStadningIcon = e.target;
-        outStadningIcon.id = 'outstanding'
-        outStadningIcon.src = './images/icons/outstanding.png';
-    }
-
-    completedIcons.forEach((completed)=> {
-        completed.addEventListener('click',  changeToCompleted)
-    })
-
-    outstandingIcons.forEach((outstanding)=> {
-        outstanding.addEventListener('click',  changeToOutstanding)
-    })
-};
+  }
+  
+  function changeToOutstanding(e) {
+    console.log('ch');
+    const outstandingIcon = e.target;
+    outstandingIcon.id = 'outstanding';
+    outstandingIcon.src = './images/icons/outstanding.png';
+  }
+  
+  function deleteTask(e) {
+    console.log('delete');
+    const deleteIcon = e.target;
+    deleteIcon.parentElement.parentElement.remove();
+  }
 
 // Functions called on page load
 renderTasksDOM();
