@@ -9,7 +9,7 @@ function addUserTask() {
         taskItemHTML = 
         `<div class="item-list grid">
             <div class="outstanding-icon flex" tabindex="4">
-                <img class='medium-icon'src="./images/icons/outstanding.png" alt="">
+                <img class='medium-icon'src="./images/icons/outstanding.png" alt="" id='outstanding'>
             </div>
             <div class="list-txt" tabindex="5">
                 <p class="list-txt-title" tabindex="6">${userTaskTitle.value}</p>
@@ -45,7 +45,7 @@ function addUserTask() {
 
        const changeToOutstanding = (e) => {
         const outStadningIcon = e.target;
-        outStadningIcon.id = 'outstadning'
+        outStadningIcon.id = 'outstanding'
         outStadningIcon.src = './images/icons/outstanding.png';
        }
 
@@ -76,14 +76,5 @@ addTaskForm.addEventListener('submit', (e) => {
     addUserTask();
 });
 
-let toggleSwitch = document.querySelector('#switch');
-
-const showCompleted = () => {
-  if(toggleSwitch.checked === true){
-    console.log('on')
-  }
-}
-
- toggleSwitch.addEventListener('click', showCompleted)
 
 
