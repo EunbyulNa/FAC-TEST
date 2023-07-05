@@ -1,38 +1,136 @@
-// Function to open the create task pop-up
-function openCreateTaskPopUp(element) {
-    element.style.display = 'grid';
-    console.log('Pop-up opened');
-}
-
-// Function to close the pop-up
-function closeAddPopUp() {
-    userTaskTitle.value = '';
-    userTaskDescription.value = '';
-    createTaskPop.style.display = 'none';
-    console.log('Create task pop-up closed');
-}
-
-function closeEditPopUp() {
-    let editTaskContainer = document.getElementById('edit-task-inner');
-    editTaskContainer.style.display = 'none';
-    editTaskGenerated.innerHTML = '';
-    console.log('Edit task pop-up closed');
-}
-
 // Variables
-let createTaskPop = document.getElementById('create-task-inner');
+
+    //  Create task pop up container
+let addTaskPop = document.getElementById('create-task-inner');
 let addTaskBtn = document.getElementById('add-task-button');
-// let cancelTaskBtn = document.querySelectorAll('.cancel-button');
 let addTaskForm = document.getElementById('add-task-form');
+
 let userTaskTitle = document.getElementById('task-title');
 let userTaskDescription = document.getElementById('task-notes');
 let taskItemHTML = "";
 let taskContainer = document.getElementById('list-container');
 
-// Event listeners
-addTaskBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    openCreateTaskPopUp(createTaskPop);
+// Tasks array with placeholder task and description
+let tasks = [{
+    title: 'Click on the button below to get started.',
+    description: 'Time to get organised!',
+    first: true,
+}];
+
+function renderTasksDOM() {
+    taskItemHTML = `
+    <div class="item-list grid">
+                        <div class="outstanding-icon flex" tabindex="4">
+                            <img class='medium-icon'src="./images/icons/outstanding.png" alt="">
+                        </div>
+                        <div class="list-txt" tabindex="5">
+                          <p class="list-txt-title" tabindex="6">${tasks[tasks.length - 1].title}</p>
+                          <p class="list-txt-note" tabindex="7">${tasks[tasks.length - 1].description}</p>
+                        </div>
+                      
+                       <div class="user-controls flex" tabindex="8">
+                        <img tabindex="9" src="./images/user-controls/completed-control.png" class="completed-icon medium-icon">     
+                        <img tabindex="10" src="./images/user-controls/edit-control.png" class="edit-icon medium-icon">       
+                        <img tabindex="11" src="./images/user-controls/delete-control.png" class="delete-icon medium-icon">   
+                       </div>       
+                     </div> 
+    `;
+    taskContainer.insertAdjacentHTML('afterbegin', taskItemHTML);
+    activateUserControls();
+    console.log(tasks);
+}
+
+// Opens the create task pop-up
+function openCreateTaskPopUp() {
+    addTaskPop.style.display = 'grid';
+    console.log('Pop-up opened');   
+}
+
+// Adds user task to the tasks array
+function removePlaceholderTask() {
+    if (tasks[0].first) {
+        taskContainer.innerHTML = '';
+        tasks.shift();
+    };
+};
+
+function addUserTask() {
+    if (userTaskTitle.value == "" || userTaskDescription.value == "") {
+        alert("Please fill in all fields.");} 
+    else {
+        removePlaceholderTask();
+        tasks.push({
+            title: userTaskTitle.value,
+            description: userTaskDescription.value,
+        });
+        closeAddPopUp();
+    }
+    renderTasksDOM();
+    console.log(tasks);
+}
+
+// Closes the the create task pop-up and resets the form
+function closeAddPopUp() {
+    userTaskTitle.value = '';
+    userTaskDescription.value = '';
+    addTaskPop.style.display = 'none';
+    console.log('Create task pop-up closed');
+}
+
+// Makes all cancel buttons clickable and triggers the close create task pop-up function
+function cancelButton() {
+    cancelIcons = document.querySelectorAll('.cancel-button');
+    cancelIcons.forEach((button, index) => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault();
+            closeAddPopUp();
+            console.log('Cancel button clicked');
+        });
+    })
+}
+
+// Adds listener to complete button to add the task
+addTaskForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    addUserTask();
 });
 
-  
+// Adds listener to plus button to open the create task pop-up
+addTaskBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    openCreateTaskPopUp();
+});
+
+function activateUserControls() {
+    let completedIcons = document.querySelectorAll('.completed-icon');
+    let outstandingIcons = document.querySelectorAll('.outstanding-icon-img');
+
+    const changeToCompleted = (e) => { 
+        console.log('click')
+    const completedIcon = e.target
+    if(completedIcon){
+        const outstandingIcon = completedIcon.parentElement.parentElement.querySelector('.outstanding-icon img');
+        outstandingIcon.id = 'done'
+        outstandingIcon.src = './images/user-controls/completed-control.png';
+    }
+    }
+
+    const changeToOutstanding = (e) => {
+        console.log('ch')
+        const outStadningIcon = e.target;
+        outStadningIcon.id = 'outstanding'
+        outStadningIcon.src = './images/icons/outstanding.png';
+    }
+
+    completedIcons.forEach((completed)=> {
+        completed.addEventListener('click',  changeToCompleted)
+    })
+
+    outstandingIcons.forEach((outstanding)=> {
+        outstanding.addEventListener('click',  changeToOutstanding)
+    })
+};
+
+// Functions called on page load
+renderTasksDOM();
+cancelButton(); 
