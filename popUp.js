@@ -5,18 +5,18 @@ function openCreateTaskPopUp(element) {
 }
 
 // Function to close the pop-up
-function closePopUp() {
+function closeAddPopUp() {
     userTaskTitle.value = '';
     userTaskDescription.value = '';
     createTaskPop.style.display = 'none';
-    console.log('Pop-up closed');
+    console.log('Create task pop-up closed');
 }
 
 function closeEditPopUp() {
     let editTaskContainer = document.getElementById('edit-task-inner');
     editTaskContainer.style.display = 'none';
     editTaskGenerated.innerHTML = '';
-    console.log('Edit pop-up closed');
+    console.log('Edit task pop-up closed');
 }
 
 // Variables
@@ -35,12 +35,4 @@ addTaskBtn.addEventListener('click', (event) => {
     openCreateTaskPopUp(createTaskPop);
 });
 
-// function loopCancelButtons() {
-// for (let i = 0; i < cancelTaskBtn.length; i++) {
-//     cancelTaskBtn[i].addEventListener('click', closePopUp);
-// }
-// }
-
-// loopCancelButtons();
-    
   

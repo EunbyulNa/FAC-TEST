@@ -1,21 +1,21 @@
 
-let edits;
+let editIcons;
 let taskListTitles;
 let taskListDescriptions;
 let editTaskContainer = document.getElementById('edit-task-inner');
 let editTaskGenerated = document.getElementById('edit-task-form');
 let addedTaskTitle;
 let addedTaskDescription;
-let cancels;
+let cancelIcons;
 
 
 
 function editButton() {
-    edits = document.querySelectorAll('.edit-icon');
+    editIcons = document.querySelectorAll('.edit-icon');
     taskListTitles = document.querySelectorAll('.list-txt-title');
     taskListDescriptions = document.querySelectorAll('.list-txt-note');
 
-    edits.forEach((task, index) => {
+    editIcons.forEach((task, index) => {
         task.addEventListener('click', (event) => {
             event.preventDefault();
             console.log(`Edit button index number: ${index}`);
@@ -31,12 +31,12 @@ function editButton() {
 };
 
 function cancelButton() {
-    cancels = document.querySelectorAll('.cancel-button');
-    cancels.forEach((button, index) => {
+    cancelIcons = document.querySelectorAll('.cancel-button');
+    cancelIcons.forEach((button, index) => {
         button.addEventListener('click', (event) => {
             event.preventDefault();
             closeEditPopUp();
-            closePopUp();
+            closeAddPopUp();
             console.log('Cancel button clicked');
         });
     })
