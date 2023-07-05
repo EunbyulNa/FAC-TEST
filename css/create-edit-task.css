@@ -1,19 +1,19 @@
 /* form > *:not(:first-child) {
     margin-top: var(--m-spacing);} */
 
-input[type="text"], textarea, label, #create-task-inner h2, #create-task-inner h3 {
+input[type="text"], textarea, label, #create-task-inner h2, #create-task-inner h3, #edit-task-inner h2, #edit-task-inner h3 {
     display: block;
 }
 
-input[type="text"], textarea, #create-task-inner h2 {
+input[type="text"], textarea, #create-task-inner h2, #edit-task-inner h2 {
   margin-bottom: var(--m-spacing);
 }
 
-#create-task-inner h2 {
+#create-task-inner h2, #edit-task-inner h2 {
   text-align: center;
 }
 
-#create-task-inner {
+#create-task-inner, #edit-task-inner {
     align-content: center;
     z-index: 100;
     display: none;

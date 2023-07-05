@@ -17,18 +17,20 @@ function addUserTask() {
             </div>
         
             <div class="user-controls flex" tabindex="8">
-                <img tabindex="9"class='medium-icon' src="./images/user-controls/completed-control.png" class="completed-icon">     
-                <img tabindex="10"class='medium-icon' src="./images/user-controls/edit-control.png" class="edit-icon">       
-                <img tabindex="11"class='medium-icon' src="./images/user-controls/delete-control.png" class="delete-icon">   
+                <img tabindex="9" src="./images/user-controls/completed-control.png" class="completed-icon medium-icon">     
+                <img tabindex="10" src="./images/user-controls/edit-control.png" class="edit-icon medium-icon">       
+                <img tabindex="11" src="./images/user-controls/delete-control.png" class="delete-icon medium-icon">   
             </div>       
         </div> `;
 
         
         let searchTaskItemHTML = `<option value="${userTaskTitle.value}"></option>`;
 
-        taskList.insertAdjacentHTML('beforeend', taskItemHTML);
+        taskContainer.insertAdjacentHTML('beforeend', taskItemHTML);
         searchTaskList.insertAdjacentHTML('beforeend', searchTaskItemHTML);
-        closePopUp();
+
+        editButton();
+        closeAddPopUp();
     }
   };
 
