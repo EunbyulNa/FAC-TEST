@@ -18,6 +18,14 @@ liveDates.forEach((date)=> {
   date.innerHTML = todayDate
 })
 
+
+
+
+
+
+
+
+
 /*
 const showAllTaskPage = (e) => {
   e.preventDefault();
