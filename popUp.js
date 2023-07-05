@@ -12,10 +12,17 @@ function closePopUp() {
     console.log('Pop-up closed');
 }
 
+function closeEditPopUp() {
+    let editTaskContainer = document.getElementById('edit-task-inner');
+    editTaskContainer.style.display = 'none';
+    editTaskGenerated.innerHTML = '';
+    console.log('Edit pop-up closed');
+}
+
 // Variables
 let createTaskPop = document.getElementById('create-task-inner');
 let addTaskBtn = document.getElementById('add-task-button');
-let cancelTaskBtn = document.querySelectorAll('.cancel-button');
+// let cancelTaskBtn = document.querySelectorAll('.cancel-button');
 let addTaskForm = document.getElementById('add-task-form');
 let userTaskTitle = document.getElementById('task-title');
 let userTaskDescription = document.getElementById('task-notes');
@@ -28,8 +35,12 @@ addTaskBtn.addEventListener('click', (event) => {
     openCreateTaskPopUp(createTaskPop);
 });
 
-for (let i = 0; i < cancelTaskBtn.length; i++) {
-    cancelTaskBtn[i].addEventListener('click', closePopUp);
-}
+// function loopCancelButtons() {
+// for (let i = 0; i < cancelTaskBtn.length; i++) {
+//     cancelTaskBtn[i].addEventListener('click', closePopUp);
+// }
+// }
+
+// loopCancelButtons();
     
   

@@ -29,7 +29,7 @@ function addUserTask() {
         taskContainer.insertAdjacentHTML('beforeend', taskItemHTML);
         searchTaskList.insertAdjacentHTML('beforeend', searchTaskItemHTML);
 
-        addListensToButton();
+        editButton();
         closePopUp();
     }
   };
