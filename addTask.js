@@ -26,7 +26,7 @@ function addUserTask() {
         
         let searchTaskItemHTML = `<option value="${userTaskTitle.value}"></option>`;
 
-        taskList.insertAdjacentHTML('beforeend', taskItemHTML);
+        taskContainer.insertAdjacentHTML('beforeend', taskItemHTML);
         searchTaskList.insertAdjacentHTML('beforeend', searchTaskItemHTML);
 
         addListensToButton();

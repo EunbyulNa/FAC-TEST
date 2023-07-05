@@ -1,7 +1,7 @@
 // Function to open the create task pop-up
-function openCreateTaskPopUp() {
-    createTaskPop.style.display = 'grid';
-    console.log('Create task pop-up opened');
+function openCreateTaskPopUp(element) {
+    element.style.display = 'grid';
+    console.log('Pop-up opened');
 }
 
 // Function to close the pop-up
@@ -20,12 +20,12 @@ let addTaskForm = document.getElementById('add-task-form');
 let userTaskTitle = document.getElementById('task-title');
 let userTaskDescription = document.getElementById('task-notes');
 let taskItemHTML = "";
-let taskList = document.getElementById('list-container');
+let taskContainer = document.getElementById('list-container');
 
 // Event listeners
 addTaskBtn.addEventListener('click', (event) => {
     event.preventDefault();
-    openCreateTaskPopUp();
+    openCreateTaskPopUp(createTaskPop);
 });
 
 for (let i = 0; i < cancelTaskBtn.length; i++) {
