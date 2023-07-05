@@ -1,13 +1,17 @@
 
-function openEditPopup() {
-    console.log('open edit popup');
-}
+let edits;
 
 function addListensToButton() {
-    let editButtons = document.querySelectorAll('.edit-icon');
-    for (let i = 0; i < editButtons.length; i++) {
-        editButtons[i].addEventListener('click', openEditPopup);
-    } 
+    edits = document.querySelectorAll('.edit-icon');
+    edits.forEach((edit) => {
+        edit.addEventListener('click', () => {
+            console.log('edit');
+        });
+    });
 }
 
 addListensToButton();
+
+function openEditPopup() {
+    console.log('open edit popup');
+}
