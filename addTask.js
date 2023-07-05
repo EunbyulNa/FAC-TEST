@@ -30,7 +30,7 @@ function addUserTask() {
         searchTaskList.insertAdjacentHTML('beforeend', searchTaskItemHTML);
 
         editButton();
-        closePopUp();
+        closeAddPopUp();
     }
   };
 
