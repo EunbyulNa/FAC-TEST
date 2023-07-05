@@ -8,7 +8,9 @@ let addedTaskTitle;
 let addedTaskDescription;
 let cancelIcons;
 
-
+let editTaskForm = document.getElementById('edit-task-form');
+let editTaskTitle;
+let editTaskDescription;
 
 function editButton() {
     editIcons = document.querySelectorAll('.edit-icon');
@@ -29,6 +31,38 @@ function editButton() {
     });
     
 };
+
+// adds listener to tick button to add the task
+editTaskForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log('Submit button clicked');
+    let editTaskTitle = document.getElementById('edit-task-title');
+    let editTaskDescription = document.getElementById('edit-task-notes');
+    console.log(editTaskTitle.value);
+    console.log(addedTaskTitle)
+    console.log(editTaskDescription.value);
+    addedTaskTitle = editTaskTitle.value;
+    addedTaskDescription = editTaskDescription.value;
+    taskItemHTML = 
+    `<div class="item-list grid">
+        <div class="outstanding-icon flex" tabindex="4">
+            <img class='medium-icon'src="./images/icons/outstanding.png" alt="">
+        </div>
+        <div class="list-txt" tabindex="5">
+            <p class="list-txt-title" tabindex="6">${addedTaskTitle}</p>
+            <p class="list-txt-note" tabindex="7">${addedTaskDescription}</p>
+        </div>
+    
+        <div class="user-controls flex" tabindex="8">
+            <img tabindex="9" src="./images/user-controls/completed-control.png" class="completed-icon medium-icon">     
+            <img tabindex="10" src="./images/user-controls/edit-control.png" class="edit-icon medium-icon">       
+            <img tabindex="11" src="./images/user-controls/delete-control.png" class="delete-icon medium-icon">   
+        </div>       
+    </div> `;
+    taskContainer.insertAdjacentHTML('beforeend', taskItemHTML);
+    editButton();
+    closeEditPopUp();
+});
 
 function cancelButton() {
     cancelIcons = document.querySelectorAll('.cancel-button');
