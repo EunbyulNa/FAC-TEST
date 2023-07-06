@@ -1,6 +1,23 @@
 /* form > *:not(:first-child) {
     margin-top: var(--m-spacing);} */
 
+#edit-task-page{
+  display: none;
+  border: 1px solid red;
+  align-content: center;
+  z-index: 100;
+
+  position: absolute;
+  height: 50%;
+  width: 70%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%); /* This centers the pop-up despite the absolute positioning! */
+  padding: 20px;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  border-radius: 25px;
+}
 input[type="text"], textarea, label, #create-task-inner h2, #create-task-inner h3, #edit-task-inner h2, #edit-task-inner h3 {
     display: block;
 }
