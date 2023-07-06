@@ -32,7 +32,7 @@ let tasks = [{
     title: 'Click on the button below to get started.',
     description: 'Time to get organised!',
     first: true,
-    outstandingIcon:  '<img class="medium-icon"src="./images/icons/outstanding.png" alt="" id="outstanding">',
+    outstandingIcon:  '<img class="outstanding-img medium-icon"src="./images/icons/outstanding.png" alt="" id="outstanding">',
     completedIcon: '<img tabindex="9" src="./images/user-controls/completed-control.png" class="completed-icon medium-icon">',
     editIcon: '<img tabindex="10" src="./images/user-controls/edit-control.png" class="edit-icon medium-icon">',
     deleteIcon: '<img tabindex="11" src="./images/user-controls/delete-control.png" class="delete-icon medium-icon">',     
@@ -147,13 +147,7 @@ function activateUserControls() {
     const completedIcons = document.querySelectorAll('.completed-icon');
     const outstandingIcons = document.querySelectorAll('.outstanding-icon');
     const deleteIcons = document.querySelectorAll('.delete-icon');
-    let editIcons = document.querySelectorAll('.edit-icon')
-
-   editIcons.forEach((edit)=> {
-    edit.addEventListener('click', handleEdit)
-   })
-
-
+   
     completedIcons.forEach((completed) => {
       completed.addEventListener('click', changeToCompleted);
     });
@@ -168,25 +162,7 @@ function activateUserControls() {
   }
 
   
-function handleEdit(e){
-  let selectedEditIcon = e.target;
-  document.querySelector('#edit-task-page').style.display = 'block';
-  let listTitleElement = selectedEditIcon.closest('.item-list').querySelector('.list-txt-title');
-  let listTitle = listTitleElement.textContent;
-   
-    document.querySelector('#edit-task-title').placeholder = listTitle;
 
-    listTitle  = document.querySelector('#edit-task-title').value;
-
-    document.querySelector('#edit-btn').addEventListener('click', function(){
-      document.querySelector('#edit-task-page').style.display = 'block';
-    })
-
-    document.querySelector('#edit-cancle-btn').addEventListener('click', function(){
-      document.querySelector('#edit-task-page').style.display = 'block';
-    })
-      
-}
   
   function changeToCompleted(e) {
     console.log('click');
@@ -201,7 +177,6 @@ function handleEdit(e){
   
   function changeToOutstanding(e) {
    
-  
     const outstandingIcon = e.target;
     if(outstandingIcon && toggleSwitch.checked){
       outstandingIcon.id = 'outstanding';
