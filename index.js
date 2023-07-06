@@ -62,6 +62,12 @@ function renderTasksDOM() {
     console.log(tasks);
 }
 
+
+
+
+
+
+
 // Opens the create task pop-up
 function openCreateTaskPopUp() {
   if(toggleSwitch.checked === true){
@@ -141,7 +147,13 @@ function activateUserControls() {
     const completedIcons = document.querySelectorAll('.completed-icon');
     const outstandingIcons = document.querySelectorAll('.outstanding-icon');
     const deleteIcons = document.querySelectorAll('.delete-icon');
-  
+    let editIcons = document.querySelectorAll('.edit-icon')
+
+   editIcons.forEach((edit)=> {
+    edit.addEventListener('click', handleEdit)
+   })
+
+
     completedIcons.forEach((completed) => {
       completed.addEventListener('click', changeToCompleted);
     });
@@ -154,6 +166,27 @@ function activateUserControls() {
       del.addEventListener('click', deleteTask);
     });
   }
+
+  
+function handleEdit(e){
+  let selectedEditIcon = e.target;
+  document.querySelector('#edit-task-page').style.display = 'block';
+  let listTitleElement = selectedEditIcon.closest('.item-list').querySelector('.list-txt-title');
+  let listTitle = listTitleElement.textContent;
+   
+    document.querySelector('#edit-task-title').placeholder = listTitle;
+
+    listTitle  = document.querySelector('#edit-task-title').value;
+
+    document.querySelector('#edit-btn').addEventListener('click', function(){
+      document.querySelector('#edit-task-page').style.display = 'block';
+    })
+
+    document.querySelector('#edit-cancle-btn').addEventListener('click', function(){
+      document.querySelector('#edit-task-page').style.display = 'block';
+    })
+      
+}
   
   function changeToCompleted(e) {
     console.log('click');
@@ -188,13 +221,16 @@ function activateUserControls() {
 
 
 let toggleSwitch = document.querySelector('#switch');
-let toggleMsg = document.querySelector('#toggle-msg')
+let toggleMsg = document.querySelector('#toggle-msg');
+
 
 const showCompleted = () => {
   if(toggleSwitch.checked === true){
    
     toggleMsg.textContent = "Show completed" 
-    document.querySelectorAll('#outstanding').forEach((out)=> {
+   
+    let outstandingIcons =  document.querySelectorAll('#outstanding')
+    outstandingIcons.forEach((out)=> {
       out.parentElement.parentElement.style.display = 'none'
     })
     
@@ -202,7 +238,8 @@ const showCompleted = () => {
 
   else{
     toggleMsg.textContent = "ALL"
-    document.querySelectorAll('#outstanding').forEach((out)=> {
+    let outstandingIcons =  document.querySelectorAll('#outstanding')
+    outstandingIcons.forEach((out)=> {
         out.parentElement.parentElement.style.display = 'grid'
       })
   }
