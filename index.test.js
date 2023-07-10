@@ -1,4 +1,4 @@
-test('Update icon image', () => {
+test('Update outstanding icon image to completed icon image', () => {
   // Get the outstanding icon element
   const outstandingIcon = document.querySelector('.outstanding-img-icon');
  
@@ -7,20 +7,61 @@ test('Update icon image', () => {
     target: outstandingIcon,
   };
  
-
   // Call the function or perform the action that updates the icon from outstanding to completed
   changeToCompleted(mockEvent);
-
+  
   // Get the updated source of the icon after the change
   const actualAfter = outstandingIcon.getAttribute('src');
 
   // Assert that the updated source matches the expected value
   equal(actualAfter, './images/user-controls/completed-control.png');
- 
 
 });
 
 
+test('Update completed icon to outstanding icon', () => {
+  // Get the done icon element
+  const done = document.querySelector('#done')
+  // Create a mock event object with a target property
+  const mockEvent = {
+    target: done
+  }
+ 
+  // Call the function or perform the action that updates the icon from outstanding to completed
+  changeToOutstanding(mockEvent)
+
+  // Get the updated source of the icon after the change
+  const actualAfter = done.getAttribute('src');
+
+  // Assert that the updated source matches the expected value
+  equal(actualAfter,'./images/icons/outstanding.png');
+
+});
+
+test('Show only completed task, and update the textcontent', ()=> {
+
+  const toggleSwitch = document.querySelector('#switch');
+  const toggleMsg = document.querySelector('#toggle-msg');
+  const outstandingIcon = document.querySelector('#outstanding');
+
+  const mockEvent = {
+    target: outstandingIcon
+  }
+ 
+  changeToCompleted(mockEvent);
+ 
+  toggleSwitch.checked = true;
+  showCompleted()
+
+  equal(toggleMsg.textContent, 'Show completed')
+
+  const outstandingIconDisplay = window.getComputedStyle(outstandingIcon).display
+  equal(outstandingIconDisplay, 'block')
+
+  toggleSwitch.checked = false;
+  toggleMsg.textContent = 'ALL'
+
+})
   
 // Adding tasks
   test('Passing test: Tasks length is 1 on page load', () => { 
