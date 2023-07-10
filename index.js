@@ -15,7 +15,7 @@ let placeholderTask = {
   title: 'Click on the button below to get started.',
   description: 'Time to get organised!',
   first: true,
-  outstandingIcon:  '<img class="outstanding-img medium-icon"src="./images/icons/outstanding.png" alt="" id="outstanding">',
+  outstandingIcon:  '<img class="outstanding-img-icon medium-icon"src="./images/icons/outstanding.png"  id="outstanding">',
   completedIcon: '<img tabindex="9" src="./images/user-controls/completed-control.png" class="completed-icon medium-icon">',
   editIcon: '<img tabindex="10" src="./images/user-controls/edit-control.png" class="edit-icon medium-icon">',
   deleteIcon: '<img tabindex="11" src="./images/user-controls/delete-control.png" class="delete-icon medium-icon">',    
@@ -93,7 +93,7 @@ function addUserTask() {
         tasks.push({
             title: userTaskTitle.value,
             description: userTaskDescription.value,
-            outstandingIcon:  '<img class="outstanding-icon medium-icon"src="./images/icons/outstanding.png" alt="" id="outstanding">',
+            outstandingIcon:  '<img class="outstanding-icon-img medium-icon"src="./images/icons/outstanding.png" alt="" id="outstanding">',
             completedIcon: '<img tabindex="9" src="./images/user-controls/completed-control.png" class="completed-icon medium-icon">',
             editIcon: '<img tabindex="10" src="./images/user-controls/edit-control.png" class="edit-icon medium-icon">',
             deleteIcon: '<img tabindex="11" src="./images/user-controls/delete-control.png" class="delete-icon medium-icon">',     
@@ -140,9 +140,9 @@ addTaskBtn.addEventListener('click', (event) => {
 // Makes the complete task, and delete task icons function
 function activateUserControls() {
     const completedIcons = document.querySelectorAll('.completed-icon');
-    const outstandingIcons = document.querySelectorAll('.outstanding-icon');
+    const outstandingIcons = document.querySelectorAll('.outstanding-icon img#outstanding');
     const deleteIcons = document.querySelectorAll('.delete-icon');
-    let editIcons = document.querySelectorAll('.edit-icon')
+    const editIcons = document.querySelectorAll('.edit-icon');
 
    editIcons.forEach((edit)=> {
     edit.addEventListener('click', handleEdit)
@@ -154,7 +154,7 @@ function activateUserControls() {
     });
   
     outstandingIcons.forEach((outstanding) => {
-      outstanding.addEventListener('click', changeToOutstanding);
+      outstanding.addEventListener('click',changeToOutstanding)
     });
   
     deleteIcons.forEach((del) => {
@@ -195,18 +195,17 @@ function handleEdit(e){
   }
   
   function changeToOutstanding(e) {
-   
-  
     const outstandingIcon = e.target;
+    outstandingIcon.id = 'outstanding';
+    outstandingIcon.src = './images/icons/outstanding.png';
+   
     if(outstandingIcon && toggleSwitch.checked){
-      outstandingIcon.id = 'outstanding';
-      outstandingIcon.src = './images/icons/outstanding.png';
       document.querySelectorAll('#outstanding').forEach((out)=> {
         out.parentElement.parentElement.style.display = 'none'
       })
     }
-   
   }
+  
   
   function deleteTask(e) {
     console.log('delete');

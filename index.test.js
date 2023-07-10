@@ -1,21 +1,26 @@
-function performTest() {
-    const expectedIcon = "./images/user-controls/completed-control.png"
-    
-    // select outstadning icon, and check outstadning icon's src 
-    const outstadningIcon = document.querySelector('.outstanding-icon img')
-    const actual = outstadningIcon.getAttribute('src')
+test('Update icon image', () => {
+  // Get the outstanding icon element
+  const outstandingIcon = document.querySelector('.outstanding-img-icon');
 
-    //Check actual and expectedIcon are equal or not
-    equal(actual,expectedIcon);
+  // Create a mock event object with a target property
+  const mockEvent = {
+    target: outstandingIcon,
+  };
 
-    //Reset outstanding icon src 
-    outstadningIcon.setAttribute('src',  './images/icons/outstanding.png')
-  
-  }
-  
-  //Click completedIcon, perfomTest will excute
-  const completedIcon = document.querySelector('.completed-icon')
-  completedIcon.addEventListener('click', performTest);
+  // Get the actual source of the icon before the change
+  const actualBefore = outstandingIcon.getAttribute('src');
+
+  // Call the function or perform the action that updates the icon from outstanding to completed
+  changeToCompleted(mockEvent);
+
+  // Get the updated source of the icon after the change
+  const actualAfter = outstandingIcon.getAttribute('src');
+
+  // Assert that the updated source matches the expected value
+  equal(actualAfter, './images/user-controls/completed-control.png');
+});
+
+
   
 // Adding tasks
   test('Passing test: Tasks length is 1 on page load', () => { 
