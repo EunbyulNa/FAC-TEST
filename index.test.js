@@ -1,14 +1,12 @@
 test('Update icon image', () => {
   // Get the outstanding icon element
   const outstandingIcon = document.querySelector('.outstanding-img-icon');
-
+ 
   // Create a mock event object with a target property
   const mockEvent = {
     target: outstandingIcon,
   };
-
-  // Get the actual source of the icon before the change
-  const actualBefore = outstandingIcon.getAttribute('src');
+ 
 
   // Call the function or perform the action that updates the icon from outstanding to completed
   changeToCompleted(mockEvent);
@@ -18,6 +16,8 @@ test('Update icon image', () => {
 
   // Assert that the updated source matches the expected value
   equal(actualAfter, './images/user-controls/completed-control.png');
+ 
+
 });
 
 
