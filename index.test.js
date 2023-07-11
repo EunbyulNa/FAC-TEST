@@ -1,20 +1,19 @@
-test('Update list to be completed', () => {
-  
+test('Update list to be completed', () => { 
   const completedIcon= document.querySelector('.completed-icon');
- 
- 
+
   const mockEvent = {
   target: completedIcon
   };
  
- 
   changeToCompleted(mockEvent);
   
- 
-  const actualAfter = completedIcon.parentElement.parentElement.firstElementChild.getAttribute("class")
+  const checkCompleted = completedIcon.parentElement.parentElement.firstElementChild;
+  const actualAfter = checkCompleted.classList.contains('line-through');
 
- 
-  equal(actualAfter, 'list-txt line-through');
+  equal(actualAfter, true);
+
+  checkCompleted.classList.remove('line-through');
+  
 
 });
 
