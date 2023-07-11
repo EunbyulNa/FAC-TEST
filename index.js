@@ -15,7 +15,6 @@ let placeholderTask = {
   title: 'Click on the button below to get started.',
   description: 'Time to get organised!',
   first: true,
-  outstandingIcon:  '<img class="outstanding-img-icon medium-icon"src="./images/icons/outstanding.png"  id="outstanding">',
   completedIcon: '<img tabindex="9" src="./images/user-controls/completed-control.png" class="completed-icon medium-icon">',
   deleteIcon: '<img tabindex="11" src="./images/user-controls/delete-control.png" class="delete-icon medium-icon">',    
 }
@@ -42,9 +41,6 @@ let tasks = [placeholderTask];
 function renderTasksDOM() {
     taskItemHTML = `
     <div class="item-list grid">
-                        <div class="outstanding-icon flex" tabindex="4">
-                           ${tasks[tasks.length-1].outstandingIcon}
-                        </div>
                         <div class="list-txt" tabindex="5">
                           <p class="list-txt-title" tabindex="6">${tasks[tasks.length - 1].title}</p>
                           <p class="list-txt-note" tabindex="7">${tasks[tasks.length - 1].description}</p>
@@ -91,7 +87,6 @@ function addUserTask() {
         tasks.push({
             title: userTaskTitle.value,
             description: userTaskDescription.value,
-            outstandingIcon:  '<img class="outstanding-icon-img medium-icon"src="./images/icons/outstanding.png" alt="" id="outstanding">',
             completedIcon: '<img tabindex="9" src="./images/user-controls/completed-control.png" class="completed-icon medium-icon">',
             deleteIcon: '<img tabindex="11" src="./images/user-controls/delete-control.png" class="delete-icon medium-icon">',     
 
@@ -137,48 +132,20 @@ addTaskBtn.addEventListener('click', (event) => {
 // Makes the complete task, and delete task icons function
 function activateUserControls() {
     const completedIcons = document.querySelectorAll('.completed-icon');
-    const outstandingIcons = document.querySelectorAll('.outstanding-icon img#outstanding');
     const deleteIcons = document.querySelectorAll('.delete-icon');
 
     completedIcons.forEach((completed) => {
       completed.addEventListener('click', changeToCompleted);
     });
-  
-    outstandingIcons.forEach((outstanding) => {
-      outstanding.addEventListener('click',changeToOutstanding)
-    });
-  
+    
     deleteIcons.forEach((del) => {
       del.addEventListener('click', deleteTask);
     });
   }
 
   
-  function changeToCompleted(e) {
-    console.log(e)
-    console.log('click');
-    const completedIcon = e.target;
-    if (completedIcon) {
-      const outstandingIcon = completedIcon.parentElement.parentElement.querySelector('.outstanding-icon img');
-      outstandingIcon.id = 'done';
-      outstandingIcon.src = './images/user-controls/completed-control.png';
-    }
-   
-  }
-  
-  function changeToOutstanding(e) {
-    const outstandingIcon = e.target;
-    outstandingIcon.id = 'outstanding';
-    outstandingIcon.src = './images/icons/outstanding.png';
-   
-    if(outstandingIcon && toggleSwitch.checked){
-      document.querySelectorAll('#outstanding').forEach((out)=> {
-        out.parentElement.parentElement.style.display = 'none'
-      })
-    }
-  }
-  
-  
+
+    
   function deleteTask(e) {
     console.log('delete');
     const deleteIcon = e.target;

@@ -74,14 +74,13 @@
 	transform: translateX(-100%);
 }
 
-.item-list-container{
-   
+.item-list-container{  
     max-width: 35rem;
     margin-top: var( --m-spacing);
 }
 
 .item-list {
-    grid-template-columns: 0.4fr 3.5fr 1fr; 
+    grid-template-columns: 4fr 0.7fr;
     padding: 1em 0;
 }
 
@@ -107,7 +106,7 @@
 @media (min-width: 300px) {
 
 .item-list {
-    grid-template-columns: 0.5fr 2fr 1fr; 
+    grid-template-columns: 4fr 0.7fr;
 }
 
 .list-txt p {
@@ -116,13 +115,7 @@
   
   }
 
-  @media (min-width: 600px) {
-  
-  }
 
-  @media (min-width: 768px) {
-   
-  }
 
 
 
