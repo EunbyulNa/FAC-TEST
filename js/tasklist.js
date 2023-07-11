@@ -26,9 +26,9 @@ function openCreateTaskPopUp() {
     toggleSwitch.checked = false;
     toggleMsg.textContent = "ALL";
 
-    // Show all outstanding tasks
-    document.querySelectorAll('#outstanding').forEach((out)=> {
-      out.parentElement.parentElement.style.display = 'grid'
+    // Show all completed tasks
+    document.querySelectorAll('.line-through').forEach((out)=> {
+      out.parentElement.style.display = 'grid'
     })
   }
   
@@ -119,8 +119,12 @@ function activateUserControls() {
 
 // Mark a task as completed
 function changeToCompleted(e){
-    console.log('clicked')
-    const checkCompleted = e.target.parentElement.parentElement.firstElementChild;
+  console.log('clicked')
+  const checkCompleted = e.target.parentElement.parentElement.firstElementChild;
+  const checkCompletedElement = e.target.parentElement.parentElement;
+  if(toggleSwitch.checked){
+    checkCompletedElement.style.display = "none";
+  }
     checkCompleted.classList.toggle('line-through');
 }
 
@@ -133,28 +137,28 @@ function deleteTask(e) {
 
 // Toggle switch event handler to show/hide completed tasks
 
-const showCompleted = () => {
-  if(toggleSwitch.checked === true){
-    toggleMsg.textContent = "Show completed";
+const showOutStanding = () => {
+  if(toggleSwitch.checked){
+    toggleMsg.textContent = "Show Outstanding";
 
-    // Hide all outstanding tasks
-    let outstandingIcons = document.querySelectorAll('#outstanding');
-    outstandingIcons.forEach((out)=> {
-      out.parentElement.parentElement.style.display = 'none';
+    // Hide all completed tasks
+    let completedTasks = document.querySelectorAll('.line-through');
+    completedTasks.forEach((task)=> {
+      task.parentElement.style.display = "none"
     });
   }
   else {
     toggleMsg.textContent = "ALL";
 
-    // Show all outstanding tasks
-    let outstandingIcons = document.querySelectorAll('#outstanding');
-    outstandingIcons.forEach((out)=> {
-      out.parentElement.parentElement.style.display = 'grid';
+    // Show all both outstanding and completed tasks
+    let completedTasks = document.querySelectorAll('.line-through');
+    completedTasks.forEach((task)=> {
+      task.parentElement.style.display = "grid"
     });
   }
 }
 
-toggleSwitch.addEventListener('click', showCompleted);
+toggleSwitch.addEventListener('click', showOutStanding);
 
 // Functions called on page load
 renderTasksDOM();
