@@ -1,42 +1,42 @@
 test('Update list to be completed', () => { 
+  //Get completed icon
   const completedIcon= document.querySelector('.completed-icon');
 
+  //Create mock Event, event object, modify target property
   const mockEvent = {
   target: completedIcon
   };
- 
+  //Excute changeToCompleted with mockevent object parameter
   changeToCompleted(mockEvent);
-  
   const checkCompleted = completedIcon.parentElement.parentElement.firstElementChild;
   const actualAfter = checkCompleted.classList.contains('line-through');
-
+  //Check class list contain line-through 
   equal(actualAfter, true);
-
+  //Reset classList
   checkCompleted.classList.remove('line-through');
-  
-
 });
 
 
-test('Show only completed task, and update the textcontent', ()=> {
+test('Hide completed tasks, and update the textcontent', ()=> {
 
   const toggleSwitch = document.querySelector('#switch');
   const toggleMsg = document.querySelector('#toggle-msg');
-  const outstandingIcon = document.querySelector('#outstanding');
+  const completedIcon= document.querySelector('.completed-icon');
 
   const mockEvent = {
-    target: outstandingIcon
+    target: completedIcon
   }
  
   changeToCompleted(mockEvent);
  
   toggleSwitch.checked = true;
-  showCompleted()
+  showOutStanding()
 
-  equal(toggleMsg.textContent, 'Show completed')
-
-  const outstandingIconDisplay = window.getComputedStyle(outstandingIcon).display
-  equal(outstandingIconDisplay, 'block')
+  equal(toggleMsg.textContent, 'Show Outstanding')
+  
+  const completedTasks = document.querySelector('.line-through').parentElement
+  const completedTasksDisplay = window.getComputedStyle(completedTasks).display
+  equal(completedTasksDisplay, 'none')
 
   //Reset default value
   toggleSwitch.checked = false;
