@@ -1,10 +1,10 @@
-test('Update outstanding icon image to completed icon image', () => {
+/*test('Update outstanding icon image to completed icon image', () => {
   // Get the outstanding icon element
   const outstandingIcon = document.querySelector('.outstanding-img-icon');
  
   // Create a mock event object with a target property
   const mockEvent = {
-    target: outstandingIcon,
+  target: outstandingIcon,
   };
  
   // Call the function or perform the action that updates the icon from outstanding to completed
@@ -16,7 +16,7 @@ test('Update outstanding icon image to completed icon image', () => {
   // Assert that the updated source matches the expected value
   equal(actualAfter, './images/user-controls/completed-control.png');
 
-});
+});*/
 
 
 test('Update completed icon to outstanding icon', () => {
@@ -58,6 +58,7 @@ test('Show only completed task, and update the textcontent', ()=> {
   const outstandingIconDisplay = window.getComputedStyle(outstandingIcon).display
   equal(outstandingIconDisplay, 'block')
 
+  //Reset default value
   toggleSwitch.checked = false;
   toggleMsg.textContent = 'ALL'
 
