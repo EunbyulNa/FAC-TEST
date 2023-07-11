@@ -144,7 +144,14 @@ function activateUserControls() {
   }
 
   
+function changeToCompleted(e){
+console.log('clicked')
+const checkCompleted = e.target.parentElement.parentElement.firstElementChild
 
+
+  checkCompleted.classList.toggle('line-through')
+
+}
     
   function deleteTask(e) {
     console.log('delete');
