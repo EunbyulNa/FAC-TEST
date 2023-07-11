@@ -1,8 +1,5 @@
 // Variables
 
-// Select all elements with class 'live-date'
-let liveDates = document.querySelectorAll('.live-date');
-
 // Create task pop-up container
 let addTaskPop = document.getElementById('create-task-inner');
 let addTaskBtn = document.getElementById('add-task-button');
@@ -24,23 +21,6 @@ let placeholderTask = {
   completedIcon: '<img tabindex="9" src="./images/user-controls/completed-control.png" class="completed-icon medium-icon">',
   deleteIcon: '<img tabindex="11" src="./images/user-controls/delete-control.png" class="delete-icon medium-icon">',    
 }
-
-// Create today's date 
-const date = new Date();
-const options = {
-  weekday:"long",
-  day:"numeric",
-  month:"long",
-  year:"numeric"
-};
-
-// Format the date as a string
-const todayDate = date.toLocaleString("en-GB", options);
-
-// Update all elements with class 'live-date' to display today's date
-liveDates.forEach((date)=> {
-  date.innerHTML = todayDate
-})
 
 // Tasks array with placeholder task and description
 let tasks = [placeholderTask];
