@@ -1,42 +1,23 @@
-/*test('Update outstanding icon image to completed icon image', () => {
-  // Get the outstanding icon element
-  const outstandingIcon = document.querySelector('.outstanding-img-icon');
+test('Update list to be completed', () => {
+  
+  const completedIcon= document.querySelector('.completed-icon');
  
-  // Create a mock event object with a target property
+ 
   const mockEvent = {
-  target: outstandingIcon,
+  target: completedIcon
   };
  
-  // Call the function or perform the action that updates the icon from outstanding to completed
+ 
   changeToCompleted(mockEvent);
   
-  // Get the updated source of the icon after the change
-  const actualAfter = outstandingIcon.getAttribute('src');
-
-  // Assert that the updated source matches the expected value
-  equal(actualAfter, './images/user-controls/completed-control.png');
-
-});*/
-
-
-test('Update completed icon to outstanding icon', () => {
-  // Get the done icon element
-  const done = document.querySelector('#done')
-  // Create a mock event object with a target property
-  const mockEvent = {
-    target: done
-  }
  
-  // Call the function or perform the action that updates the icon from outstanding to completed
-  changeToOutstanding(mockEvent)
+  const actualAfter = completedIcon.parentElement.parentElement.firstElementChild.getAttribute("class")
 
-  // Get the updated source of the icon after the change
-  const actualAfter = done.getAttribute('src');
-
-  // Assert that the updated source matches the expected value
-  equal(actualAfter,'./images/icons/outstanding.png');
+ 
+  equal(actualAfter, 'list-txt line-through');
 
 });
+
 
 test('Show only completed task, and update the textcontent', ()=> {
 
