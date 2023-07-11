@@ -47,7 +47,7 @@ function removePlaceholderTask() {
 };
 
 function addUserTask() {
-    if (userTaskTitle.value == "" || userTaskDescription.value == "") {
+    if (userTaskTitle.value === "" || userTaskDescription.value === "") {
         // Display an alert if any field is empty
         alert("Please fill in all fields.");
     } 
@@ -94,7 +94,11 @@ function cancelButton() {
 // Adds listener to complete button to add the task
 addTaskForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    if (userTaskDescription.value === "" || userTaskTitle.value === "") {
+        console.log("Please enter all values");
+    } else {
     addUserTask();
+    }
 });
 
 // Adds listener to plus button to open the create task pop-up
