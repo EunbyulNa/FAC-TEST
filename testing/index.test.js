@@ -104,11 +104,3 @@ test('Hide completed tasks, and update the textcontent', ()=> {
     taskContainer.innerHTML = '';
     renderTasksDOM();
   })
-
-  // test('Clicking add button opens popup', () => { 
-  //  })
-
-// Deleting tasks
-
-  // test('Deleting a task removes it from the page', () => {   
-  //  })
