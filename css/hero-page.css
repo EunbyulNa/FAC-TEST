@@ -1,5 +1,5 @@
 .header {   
-    max-width: 60rem;   
+    /* max-width: 60rem;    */
 } 
 
 #hero-page .live-date {
@@ -78,7 +78,7 @@
 
 @media (min-width: 300px) {
     .header { padding:var(--s-spacing); }
-    .title-container{text-align: left;}
+    .title-container{text-align: center;}
     .list-type-container { grid-template-columns: repeat(2, 1fr); }
     .card {padding: 1rem};
   }

@@ -18,7 +18,7 @@
 
 .toggle-container {
     width:300px;
-    grid-template-columns: 0.5fr 0.2fr;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
 }
 
@@ -85,6 +85,7 @@
 .list-txt-note {
     font-style: italic;
     font-size: 0.8rem;
+    color: var(--red);
 }
 
 .line-through {

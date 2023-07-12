@@ -15,6 +15,7 @@ I've included reusable variables that we can use in the HTML code.
     --darker-green: #67B281;
     --pale-blue-layout: #D4EBFF;
     --darker-blue: #4378FF;
+    --red: #FE3333;
 
     /* layout specific colours */
     --input-field-grey: #F5F5F5;
@@ -58,7 +59,9 @@ I've included reusable variables that we can use in the HTML code.
 }
 
 main {
-    background-image: url(../images/honeydew-gradient.png);
+    background-image: url(../images/lake.png);
+    background-size: cover;
+    background-position: right;
 }
 
 body {
@@ -108,7 +111,7 @@ button {
 
 .large-icon {
     /* this is currently just the home icon */
-    width: 40px;
+    width: 30px;
 }
 
 /* multi-section font styling */
